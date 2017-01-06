@@ -1,0 +1,104 @@
+<ion-view view-title="About this App"
+          ng-controller="AboutController">
+    
+    <ion-header-bar class="bar bar-subheader"> 
+        <div class="button-bar">
+            
+            <button class="button button-assertive"
+                    ng-click="setAboutOrganisational();">Organisational Info</button>
+            
+            <button class="button button-positive"
+                    ng-click="setAboutTechnical();">Technical Info</button>
+            
+        </div>
+    </ion-header-bar>
+    
+  <!-- -------------------------------------------------------- -->    
+  <ion-content class="has-header">
+
+      <!-- ---------------------------------------------- -->
+       <div ng-show="showAbout_technical">
+      
+         <h1> Technical Information</h1>
+   
+           <div class="center margin_20pt"> App Version:  
+               <span class="bold">{{general_app_version_number}}</span>
+           </div>
+              
+           <div class="center margin_20pt"> Creation date: 
+               <span>{{creation_date}}</span>
+           </div>         
+           
+           <div class="center margin_20pt"> Author:   
+               <span>C. Eikemeier</span>
+           </div>
+          
+           <div class="center margin_20pt"> Copyright: 
+               <span>(c) 2016,2017</span>
+           </div>
+           
+           <div class="center margin_20pt">
+               <br/>
+              <p> This app is based on an idea of a friend who works in a 
+                  construction consulting firm in Karlsruhe/Germany. 
+                  (Image properties rights are with them.)
+                  
+                  The app is implemented using the <a href="http://ionicframework.com" target="_system">Ionic</a> 
+                  programming package as part of the 
+                  capstone project in the Coursera 
+                  <a href="http://www.coursera.org/specializations/full-stack" target="_system">
+                  
+                    Full-stack Web Development Specialization</a>. 
+               </p>
+           </div>
+           
+      </div>
+
+      
+        <!-- ---------------------------------------------- -->      
+      <div ng-show="showAbout_organsational">
+      
+         <h1> Organisational Information</h1>
+                
+          <div class="center margin_50pt_top_bottom">
+                <img src="img/logo.png" width="55%" class="center">
+          </div>
+          <div class="center"> (c) 2016,2017 
+          </div>
+          
+          <br/>
+          
+          <div class="center ">
+             WWW:  <span> <a href="http://www.abc.com" target="_system">
+                   www.abc.com</a></span>
+          </div>
+          
+          <div class="center ">
+             Postal address:  <span> Oak Ridge Way 42,  Denva, CO</span>
+          </div>
+          
+          <div class="center">
+              Phone:  <span> <a href="tel:+41-71-2444673">(+1) 112 334 556 - 0</a></span>
+          </div>
+          
+          <div class="center">
+             eMail:  <span> <a href="mailto:ceikemeier@gmail.com">info@abc.de</a></span>
+          </div>
+      </div>
+      
+      
+  
+      
+      
+      
+  </ion-content>    
+  <!-- -------------------------------------------------------- -->    
+    
+  <!--  
+       <ion-footer-bar class="bar">
+          <div class="button-bar">
+            <button class="button button-royal">T32</button>  
+          </div>
+       </ion-footer-bar>
+  --> 
+</ion-view>

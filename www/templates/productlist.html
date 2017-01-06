@@ -1,0 +1,28 @@
+<ion-view view-title="ProductList">
+    <ion-header-bar class="bar bar-subheader"> 
+        <div class="button-bar">
+            <button class="button button-positive">T31</button>
+            <button class="button button-assertive">T33</button>
+        </div>
+    </ion-header-bar>
+    
+  <ion-content class="has-header">
+     
+    <ion-list>
+      <ion-item ng-repeat="product in products"> 
+          <!--href="#/app/productlists/{{product.id}}">  -->
+          <img src={{product.img}} width="50">
+            {{product.firma}}&nbsp;--&nbsp;{{product.productname}}
+      </ion-item>        
+    </ion-list>  
+      
+  </ion-content>    
+<!--     
+        <ion-footer-bar class="bar">
+            <div class="button-bar">
+                <button class="button button-royal">T32</button>  
+            </div>
+        </ion-footer-bar>
+-->
+
+</ion-view>

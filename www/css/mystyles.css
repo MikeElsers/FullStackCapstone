@@ -1,0 +1,25 @@
+/**  own styles for  MatRep App   **/
+
+H1 { 
+    text-align: center;
+    font-size-adjust: auto;
+    font-size: 18pt;
+}
+
+.center{
+    text-align: center;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.margin_20pt{
+    
+    margin: 20pt;
+}
+
+.margin_50pt_top_bottom{
+    margin-top:    50pt;
+    margin-bottom: 50pt;
+}
