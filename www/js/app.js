@@ -63,9 +63,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-  
+
+    //-------------------------------------------------------------
     .state('app.product', {
-      url: '/product',
+      url: '/product/:id',
       views: {
         'menuContent': {
           templateUrl: 'templates/product.html',
@@ -73,6 +74,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+  
+  //-------------------------------------------------------------
   
    .state ('app.about', {
       

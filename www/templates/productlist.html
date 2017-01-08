@@ -12,7 +12,7 @@
       <div class="list" 
            ng-repeat="product in products">
         <a class="item item-thumbnail-left item-icon-right" 
-           href="#/app/product">
+            ng-href="#/app/product/{{product.id}}" >
             
             <img src={{product.image}} > 
             <h2> {{product.product_name_short}} </h2>

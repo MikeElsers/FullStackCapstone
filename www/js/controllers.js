@@ -90,21 +90,20 @@ angular.module('starter.controllers', [])
 })
 
  //-----------------------------------------------------------
-.controller('ProductCtrl',   
-               function($scope, $http) {
+.controller('ProductCtrl', ["$scope","$http", "$stateParams",
+            function($scope, $http, $stateParams) {
      
   $scope.product = [];
-    /*
-    $http.get( "http://localhost:3000/products")
+     
+  $http.get( "http://localhost:3000/products/"+$stateParams.id)
     
                      .then (
             function (response){
-                $scope.products = response.data;
-                $scope.showProducts = true;
+                $scope.product = response.data;
             }       
     );
-*/
-    
+
+/* 
   $scope.product = 
     
       {
@@ -126,9 +125,10 @@ angular.module('starter.controllers', [])
          "inserted_at_date":"2017-01-05",
          "inserted_by_user":"CE"
       }
-    
-})
+*/    
 
+
+}] )
 
 ;
 
