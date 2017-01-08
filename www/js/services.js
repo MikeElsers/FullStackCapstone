@@ -1,4 +1,4 @@
-angular.module('starter',)
+angular.module('starter')
 
 .constant("base_url", "http://localhost:3000")
 
@@ -19,4 +19,5 @@ angular.module('starter',)
     
     //-----------------
     
-}]);
+  }
+]);

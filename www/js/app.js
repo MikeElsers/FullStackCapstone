@@ -19,7 +19,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
 
-  }
+  }      
+      
+      
   });
 })
 
@@ -58,6 +60,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         'menuContent': {
           templateUrl: 'templates/productlist.html',
           controller: 'ProductListCtrl'
+        }
+      }
+    })
+  
+    .state('app.product', {
+      url: '/product',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/product.html',
+          controller: 'ProductCtrl'
         }
       }
     })

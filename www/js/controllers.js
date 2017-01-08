@@ -59,8 +59,23 @@ angular.module('starter.controllers', [])
 
 
  //-----------------------------------------------------------
-.controller('ProductListCtrl', function($scope) {
-      
+.controller('ProductListCtrl',   
+               function($scope, $http) {
+     
+  $scope.products = [];
+    
+    //core_data_factory.getProducts()
+    
+    $http.get( "http://localhost:3000/products")
+    
+                     .then (
+            function (response){
+                $scope.products = response.data;
+                $scope.showProducts = true;
+            }       
+    );
+   
+    /*
   $scope.products = 
     [
       { firma: 'Suka', id: 1, productname:'SukaFix 2000', img:'img/prod/1.jpg' },
@@ -70,8 +85,49 @@ angular.module('starter.controllers', [])
       { firma: 'Colorme', id: 5, productname:'colorMeFast 99', img:'img/prod/5.jpg' },
       { firma: 'SimpleThings', id: 6, productname:'simpleThing01', img:'img/prod/6.jpg' }
     ];
+    */
+    
 })
 
+ //-----------------------------------------------------------
+.controller('ProductCtrl',   
+               function($scope, $http) {
+     
+  $scope.product = [];
+    /*
+    $http.get( "http://localhost:3000/products")
+    
+                     .then (
+            function (response){
+                $scope.products = response.data;
+                $scope.showProducts = true;
+            }       
+    );
+*/
+    
+  $scope.product = 
+    
+      {
+         "id":"3",
+         "product_name_short":"Test-3: SillyKuun, 300ml",
+         "product_name_long":"Test-3: awesome silicone product: SillyKuun, 0.3 l package",
+         "producer":"NP - NewProducts, Inc.",
+         "image":"img/prod/3.jpg",
+         "description":"This is the awesome silicone product for bath and kitchen to fill any joints.",
+         "scope_of_application":"tile walls in bath / kitchen ",
+         "resources":"",
+         "additional_explanations":"***additional explanations about the product ***",
+         "keywords":"",
+         "quality_1":"yes",
+         "quality_2":"yes",
+         "quality_3":"yes",
+         "quality_4":"no",
+         "quality_levels":"",
+         "inserted_at_date":"2017-01-05",
+         "inserted_by_user":"CE"
+      }
+    
+})
 
 
 ;

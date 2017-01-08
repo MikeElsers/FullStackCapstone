@@ -1,6 +1,9 @@
 //--------- controller_about.js  ---------------------------  
 
+
 angular.module('starter.controllers')
+
+
 
 //-----------------------------------------------------------
 //--  used in about.html page (technical + orga information)
@@ -29,3 +32,5 @@ angular.module('starter.controllers')
     /**/
     
 })   //--------------------------------------------------------
+                      
+                          
