@@ -1,0 +1,75 @@
+<ion-view view-title="Product"
+          ng-controller="ProductCtrl"
+          >
+    <ion-header-bar class="bar bar-subheader"> 
+           {{product.product_name_short}}
+    </ion-header-bar>
+    
+  <ion-content class="has-header">
+    
+      <div class="row">
+          <div class="col-4">
+          <img src={{product.image}} width="200"> 
+          </div>
+          
+          <div class="col-6">
+            <div>  Q1:&nbsp;
+                <span ng-show="{{product.quality_1 == 'yes'}}">
+                    <i class="ion-android-checkbox-outline"></i>
+                </span>
+                <span ng-hide="{{product.quality_1 == 'yes'}}">
+                    <i class="ion-android-checkbox-outline-blank"></i>
+                </span>
+            </div>
+            <div>  Q2:&nbsp; 
+                <span ng-show="{{product.quality_2 == 'yes'}}">
+                    <i class="ion-android-checkbox-outline"></i>
+                </span>
+               <span ng-hide="{{product.quality_2 == 'yes'}}">
+                    <i class="ion-android-checkbox-outline-blank"></i>
+                </span>                
+            </div>
+            <div>  Q3:&nbsp; 
+                <span ng-show="{{product.quality_3 == 'yes'}}">
+                    <i class="ion-android-checkbox-outline"></i>
+                </span>
+               <span ng-hide="{{product.quality_3 == 'yes'}}">
+                    <i class="ion-android-checkbox-outline-blank"></i>
+                </span>                
+            </div>
+            <div>  Q4:&nbsp; 
+                <span ng-show="{{product.quality_4 == 'yes'}}">
+                    <i class="ion-android-checkbox-outlinek"></i>
+                </span>
+                <span ng-hide="{{product.quality_4 == 'yes'}}">
+                    <i class="ion-android-checkbox-outline-blank"></i>
+                </span>
+            </div>
+                
+          </div>
+      </div>
+      <div>
+          
+          
+          
+            <p>  </p>
+             <hr/>
+            <b>Scope</b>
+            <p>{{product.scope_of_application}}</p>
+
+            <b>Remark</b>
+            <p>{{product.additional_explanations}}</p>
+            
+      </div>
+ 
+      
+  </ion-content>    
+<!--     
+        <ion-footer-bar class="bar">
+            <div class="button-bar">
+                <button class="button button-royal">T32</button>  
+            </div>
+        </ion-footer-bar>
+-->
+
+</ion-view>
