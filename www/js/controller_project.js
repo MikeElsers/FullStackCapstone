@@ -95,12 +95,14 @@ angular.module('starter.controllers')
      
   $http.get( $rootScope.base_url + "projects/"+$stateParams.id)
     
-                     .then (
+       .then (
             function (response){
                 $scope.project = response.data;
             }       
-    );            
-
+        );            
+                
+                
+                
 /* 
   $scope.project = 
     
