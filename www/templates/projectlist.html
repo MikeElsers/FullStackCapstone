@@ -1,31 +1,30 @@
-<ion-view view-title="ProductList"
-          ng-controller="ProductListCtrl"
+<ion-view view-title="ProjectList"
+          ng-controller="ProjectListCtrl"
           >
-    
-    
-    
-    
-    
     <ion-header-bar class="bar bar-subheader"> 
+    
         <div class="button-bar">
             <button class="button button-balanced">Filter</button>
             <button class="button button-assertive">Search</button>
         </div>
     </ion-header-bar>
     
-  <ion-content class="has-header">
+  <ion-content class="has-header">  <!--  class="has-header">    -->
          
       <div class="list" 
-           ng-repeat="product in products">
-        <a class="item item-thumbnail-left item-icon-right" 
-            ng-href="#/app/product/{{product.id}}" >
-            
-            <img src={{product.image}} > 
-            <h2> {{product.product_name_short}} </h2>
-            <p> {{product.product_name_long}} </p>
+           ng-repeat="project in projects">
+          
+         <a class="item item-thumbnail-left item-icon-right" 
+            ng-href="#/app/project/{{project.id}}" >
+        
+          
+             
+            <b> {{project.project_identifier_short}} </b>
+            <p> {{project.project_identifier_long}} </p>
             
             <i class="icon ion-android-arrow-dropright"></i>
-        </a>     
+        
+        </a>   
       </div>
  
       

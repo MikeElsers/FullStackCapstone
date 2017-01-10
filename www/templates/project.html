@@ -1,0 +1,52 @@
+<ion-view view-title="Project"
+          ng-controller="ProjectCtrl"
+          >
+    <ion-header-bar class="bar bar-subheader"> 
+        <b>{{project.id}}|{{project.address_town}}:&nbsp;&nbsp;</b> 
+        <span class="blue bold">{{project.project_identifier_short}}</span>
+    </ion-header-bar>
+    
+  <ion-content class="has-header">
+      
+      <div class="row">
+          <div class="col-4">
+             (PLACEHOLDER FOR IMAGE/ICON)
+          </div>
+          
+          <div class="col-6">
+            (PLACEHOLDER FOR CONTACT)
+        </div>
+      </div>
+      
+      <!-- -----------------------------------------  -->
+      <div>
+            <p>  </p>
+             <hr/>
+            <b class="row subheader">Location</b>
+            <p>{{project.address_postal_code}} &nbsp;&nbsp;{{project.address_town}} <br/>
+            {{project.address_street}}</p> 
+            
+            <b class="row subheader">Description</b>
+            <p>{{project.project_identifier_long}}</p> 
+          
+            <b class="row subheader">Contact</b>
+            <p>
+              <b>Name:</b> {{project.contact_name}} <br/>
+              <b>Phone:</b> {{project.contact_phone}}<br/>
+              <b>Remarks:</b> {{project_freetext}}
+            </p>
+      </div>
+      
+      
+ 
+      
+  </ion-content>    
+<!--     
+        <ion-footer-bar class="bar">
+            <div class="button-bar">
+                <button class="button button-royal">T32</button>  
+            </div>
+        </ion-footer-bar>
+-->
+
+</ion-view>

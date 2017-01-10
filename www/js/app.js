@@ -59,12 +59,38 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
   
+    //-- *****************  PROJECT  ************************** 
+    //-------------------------------------------------------------
+    .state('app.projectlist', {
+      url: '/projectlist',
+      views: {
+        'menuContent': {
+            templateUrl: 'templates/projectlist.html',
+            controller: 'ProjectListCtrl'
+        }
+      }
+    })
+
+    //-------------------------------------------------------------
+    .state('app.project', {
+      url: '/project/:id',
+      views: {
+        'menuContent': {
+              templateUrl: 'templates/project.html',
+              controller: 'ProjectCtrl'
+        }
+      }
+    })
+
+  
+  //-- *****************  PRODUCT  **************************   
+  //-------------------------------------------------------------
     .state('app.productlist', {
       url: '/productlist',
       views: {
         'menuContent': {
-          templateUrl: 'templates/productlist.html',
-          controller: 'ProductListCtrl'
+              templateUrl: 'templates/productlist.html',
+              controller: 'ProductListCtrl'
         }
       }
     })
@@ -74,8 +100,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/product/:id',
       views: {
         'menuContent': {
-          templateUrl: 'templates/product.html',
-          controller: 'ProductCtrl'
+              templateUrl: 'templates/product.html',
+              controller: 'ProductCtrl'
         }
       }
     })

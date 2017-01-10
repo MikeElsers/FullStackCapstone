@@ -16,7 +16,7 @@ angular.module('starter.controllers', [])
     
   $scope.general_app_version_number =  "0.1";      //--  *** App Version ***    
     
-  $scope.creation_date              =  new Date(Date.parse("2017-01-05")).toDateString();  //--  *** creation date of APP
+  $scope.creation_date              =  new Date(Date.parse("2017-01-07")).toDateString();  //--  *** creation date of APP
     
     
   //-- **********************  ATTIC    ***********************************
@@ -40,9 +40,6 @@ angular.module('starter.controllers', [])
   $scope.login = function() {
     $scope.modal.show();
   };
-
-  
-
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
