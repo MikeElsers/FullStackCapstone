@@ -10,7 +10,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 //--------------------------------------
 .run(function($ionicPlatform, $rootScope) {
     
-  $rootScope.base_url = "http://localhost:3000/";    
+  $rootScope.base_url = "http://localhost:3000/";  
+    
+  //--  variable that holds 
+  $rootScope.current_project_id ="";    
+    
     
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

@@ -44,6 +44,22 @@ angular.module('starter.controllers')
       this.getProject = function (index) {
             return $http.get(base_url+"projects/"+index);
        };
+//------------------------ CURRENT PROJECT    ------------------------------    
 
-                
+       this.getCurrentProject = function (){
+        return   this.getProject ( $rootScope.current_project_id);
+        
+       };
+        
+       this.getCurrentProjectID = function(){
+              return  $rootScope.current_project_id;  
+       };
+                    
+       this.setCurrentProjectID = function(index){
+              $rootScope.current_project_id = index;
+       };
+
+//-----------------------------------------------------------------------
+               
+                    
 } ]);

@@ -89,7 +89,7 @@ angular.module('starter.controllers')
             function( $rootScope, $scope, $http, $stateParams, coreFactory) {
      
   $scope.project = [];
-     
+         
   /**/              
   coreFactory.getProject (  parseInt ( $stateParams.id, 10) )
             .then (
@@ -98,8 +98,30 @@ angular.module('starter.controllers')
                       //$scope.showDis = true;
                 });
 /**/      
+ 
+   //------------------------------------------------            
+   $scope.setCurrentProjectID =  function (index){
+         coreFactory.setCurrentProjectID(index);       
+   }                          
+   
+   $scope.getCurrentProjectID = function () {
+        coreFactory.getCurrentProjectID();
+   }
                 
-                
+   
+   //------------------------------------------------            
+   $scope.getCurrentProject =  function (){
+       
+        coreFactory.getCurrentProject()
+            .then(
+               function(response){
+                        $scope.current_project_id = response.data;
+               }
+        );
+   };
+   //------------------------------------------------            
+
+   
 /* 
   $scope.project = 
     
