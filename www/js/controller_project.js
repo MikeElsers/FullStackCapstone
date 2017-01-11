@@ -8,21 +8,18 @@ angular.module('starter.controllers')
 
  //-----------------------------------------------------------
 .controller('ProjectListCtrl', 
-            ["$rootScope", "$scope","$http",
-            function($rootScope, $scope, $http ) {
+            ['$rootScope', '$scope','$http','coreFactory',
+            function($rootScope, $scope, $http, coreFactory ) {
      
   $scope.projects = [];
     
-/**/   $http.get( $rootScope.base_url + "projects/") 
-    
-                     .then (
-            function (response){
-                $scope.projects = response.data;
-                $scope.showProjects = true;
-            }       
-    );
-/**/
-                
+  coreFactory.getProjects() 
+     .then(
+          function (response){
+                  $scope.projects = response.data;
+          }   
+       );        
+                        
     /* 
   $scope.projects = 
     [
@@ -81,26 +78,26 @@ angular.module('starter.controllers')
 
       }
   ];
-*/
+/**/
     
 }]
 )
 
 
 //-----------------------------------------------------------
-.controller('ProjectCtrl', ["$rootScope", "$scope","$http", "$stateParams",
-            function( $rootScope, $scope, $http, $stateParams) {
+.controller('ProjectCtrl', ["$rootScope", "$scope","$http", "$stateParams",'coreFactory',
+            function( $rootScope, $scope, $http, $stateParams, coreFactory) {
      
   $scope.project = [];
      
-  $http.get( $rootScope.base_url + "projects/"+$stateParams.id)
-    
-       .then (
-            function (response){
-                $scope.project = response.data;
-            }       
-        );            
-                
+  /**/              
+  coreFactory.getProject (  parseInt ( $stateParams.id, 10) )
+            .then (
+                function (response) {
+                      $scope.project = response.data;
+                      //$scope.showDis = true;
+                });
+/**/      
                 
                 
 /* 

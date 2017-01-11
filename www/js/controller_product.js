@@ -8,31 +8,28 @@ angular.module('starter.controllers')
 
  //-----------------------------------------------------------
 .controller('ProductListCtrl', 
-            ["$rootScope", "$scope","$http",
-            function($rootScope, $scope, $http ) {
-     
+            ['$rootScope', '$scope', '$http', 'coreFactory',
+            function($rootScope, $scope, $http, coreFactory ) {
+                  
+             
   $scope.products = [];
-    
-    //core_data_factory.getProducts()
-    
-    $http.get( $rootScope.base_url + "products/") 
-    
-                     .then (
-            function (response){
-                $scope.products = response.data;
-                $scope.showProducts = true;
-            }       
-    );
-   
-    /*
+            
+  coreFactory.getProducts() 
+             .then(
+                function (response){
+                    $scope.products = response.data;
+                }   
+             );
+  
+/*    
   $scope.products = 
     [
-      { firma: 'Suka', id: 1, productname:'SukaFix 2000', img:'img/prod/1.jpg' },
-      { firma: 'Gabarit', id: 2, productname:'GabDrain', img:'img/prod/2.jpg'  },   
-      { firma: 'OBII', id: 3, productname:'OBII protection mat', img:'img/prod/3.jpg'  },
-      { firma: 'Luxodur', id: 4, productname:'myLux 10', img:'img/prod/4.jpg' },
-      { firma: 'Colorme', id: 5, productname:'colorMeFast 99', img:'img/prod/5.jpg' },
-      { firma: 'SimpleThings', id: 6, productname:'simpleThing01', img:'img/prod/6.jpg' }
+      { producer: 'Suka', id: 1, product_name_short:'SukaFix 2000', image:'img/prod/1.jpg' },
+      { producer: 'Gabarit', id: 2, product_name_short:'GabDrain', image:'img/prod/2.jpg'  },   
+      { producer: 'OBII', id: 3, product_name_short:'OBII protection mat', image:'img/prod/3.jpg'  },
+      { producer: 'Luxodur', id: 4, product_name_short:'myLux 10', image:'img/prod/4.jpg' },
+      { producer: 'Colorme', id: 5, product_name_short:'colorMeFast 99', image:'img/prod/5.jpg' },
+      { producer: 'SimpleThings', id: 6, product_name_short:'simpleThing01', image:'img/prod/6.jpg' }
     ];
     */
     
@@ -41,19 +38,21 @@ angular.module('starter.controllers')
 
 
 //-----------------------------------------------------------
-.controller('ProductCtrl', ["$rootScope", "$scope","$http", "$stateParams",
-            function( $rootScope, $scope, $http, $stateParams) {
+.controller('ProductCtrl', ["$rootScope", "$scope", "$http", "$stateParams", 'coreFactory',
+            function( $rootScope, $scope, $http, $stateParams, coreFactory) {
      
   $scope.product = [];
-     
-  $http.get( $rootScope.base_url + "products/"+$stateParams.id)
     
-                     .then (
-            function (response){
-                $scope.product = response.data;
-            }       
-    );            
-
+    
+/**/              
+  coreFactory.getProduct (  parseInt ( $stateParams.id, 10) )
+            .then (
+                function (response) {
+                      $scope.product = response.data;
+                      //$scope.showDis = true;
+                });
+/**/             
+                                
 /* 
   $scope.product = 
     
@@ -82,8 +81,6 @@ angular.module('starter.controllers')
 }] )
 ;
 
-
-;   
 //--------------------------------------------------------
                       
                           
