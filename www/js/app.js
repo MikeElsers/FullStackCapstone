@@ -14,7 +14,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
   $rootScope.base_url = "http://192.168.0.15:3000/";  
     
   //--  variable that holds 
-  $rootScope.current_project_id = -9 ;    
+  $rootScope.current_project_id = 0 ;    
     
     
   $ionicPlatform.ready(function() 

@@ -45,10 +45,18 @@
           Projects
         </ion-item>
  
-          <ion-item menu-close href="#/currentproject">
-          Current project
-        </ion-item>
-          
+          <!--   SHOW  ENABLED or DISABLED ITEM  -->
+          <div ng-controller="ProjectCtrl"
+               ng-if=" current_project_id != 0">
+                      <ion-item menu-close href="#/app/project/{{current_project_id}}">
+                            Current project
+                      </ion-item>    
+          </div>
+          <div   ng-if=" current_project_id == 0">
+                      <ion-item menu-close class="blue" href="#/app/projectlist">
+                             Current (not yet selected)
+                      </ion-item>
+           </div>
           
         <!-- --------------------------------------------- -->
         <ion-item class="item-divider  item-icon-left">

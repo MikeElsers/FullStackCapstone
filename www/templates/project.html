@@ -18,7 +18,12 @@
             <p class="center">  
                 <button ion-button 
                         class="button button-positive"
-                        ng-click="setCurrentProjectID(project.id)">Set as Current!</button>
+                        ng-if="current_project_id != project.id"
+                        ng-click="setCurrentProjectID(project.id)">Set as current!</button>
+                <button ion-button 
+                        class="button button-positive"
+                        ng-if="current_project_id == project.id"
+                        ng-click="setCurrentProjectID(0)">UNSet current!</button>
             </p>
               
               
