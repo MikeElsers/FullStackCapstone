@@ -1,7 +1,7 @@
 //--------- controller_about.js  ---------------------------  
 
 
-angular.module('starter.controllers')
+angular.module('starter')
 
 
 

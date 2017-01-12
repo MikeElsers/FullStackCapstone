@@ -1,4 +1,4 @@
-angular.module('starter.controllers')
+angular.module('starter')
 
 .constant("base_url", "http://localhost:3000/")
 

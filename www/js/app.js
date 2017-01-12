@@ -5,31 +5,36 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllng-click="setAboutTechnical"ers' is found in controllers.js
 //-- **************************************************************** --//
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'ngCordova'])
 
 //--------------------------------------
-.run(function($ionicPlatform, $rootScope) {
+.run(function($ionicPlatform, $rootScope, $ionicLoading, $cordovaSplashscreen, $timeout) {
     
-  $rootScope.base_url = "http://localhost:3000/";  
+//  $rootScope.base_url = "http://localhost:3000/";  
+  $rootScope.base_url = "http://192.168.0.15:3000/";  
     
   //--  variable that holds 
   $rootScope.current_project_id ="";    
     
     
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-
-  }      
+  $ionicPlatform.ready(function() 
+  {
+            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+            // for form inputs) 
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            cordova.plugins.Keyboard.disableScroll(true);
+        }
+        if (window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleDefault();
+        }      
       
+      
+/*    $timeout(function(){
+                $cordovaSplashscreen.hide();
+      },4000);
+*/
       
   });
 })

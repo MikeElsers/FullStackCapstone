@@ -3,7 +3,7 @@
 //--   controller for product
 //--   controller for product LIST
 
-angular.module('starter.controllers')
+angular.module('starter')
 
 
  //-----------------------------------------------------------

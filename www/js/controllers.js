@@ -1,9 +1,10 @@
-angular.module('starter.controllers', [])
+angular.module('starter')
 
  //-----------------------------------------------------------
-.controller('AppCtrl', ['$rootScope','$scope', '$ionicModal', '$timeout','$ionicPlatform', '$cordovaLocalNotification',
+.controller('AppCtrl', ['$rootScope','$scope', '$ionicModal', 
+                        '$timeout', '$ionicPlatform', 
       function($rootScope, $scope,         $ionicModal, 
-               $timeout,   $ionicPlatform, $cordovaLocalNotification) {
+               $timeout,   $ionicPlatform) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.

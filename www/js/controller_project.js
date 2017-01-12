@@ -3,13 +3,14 @@
 //--   controller for project
 //--   controller for project LIST
 
-angular.module('starter.controllers')
+angular.module('starter')
 
 
  //-----------------------------------------------------------
 .controller('ProjectListCtrl', 
             ['$rootScope', '$scope','$http','coreFactory',
-            function($rootScope, $scope, $http, coreFactory ) {
+            function($rootScope, $scope, $http, coreFactory
+                     ) {
      
   $scope.projects = [];
     
@@ -17,9 +18,11 @@ angular.module('starter.controllers')
      .then(
           function (response){
                   $scope.projects = response.data;
-          }   
-       );        
-                        
+              
+              }
+     );
+          
+                                     
     /* 
   $scope.projects = 
     [
@@ -80,8 +83,7 @@ angular.module('starter.controllers')
   ];
 /**/
     
-}]
-)
+}])
 
 
 //-----------------------------------------------------------
@@ -101,9 +103,11 @@ angular.module('starter.controllers')
  
    //------------------------------------------------            
    $scope.setCurrentProjectID =  function (index){
+         console.log ("NEW current project: ID =["+index+"]");
          coreFactory.setCurrentProjectID(index);       
    }                          
    
+   //------------------------------------------------            
    $scope.getCurrentProjectID = function () {
         coreFactory.getCurrentProjectID();
    }
@@ -147,9 +151,7 @@ angular.module('starter.controllers')
 */    
 
 
-}] 
-)
-;
+}]);
 
 
 //--------------------------------------------------------

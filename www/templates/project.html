@@ -10,12 +10,24 @@
       
       <div class="row">
           <div class="col-4">
-             (PLACEHOLDER FOR IMAGE/ICON)
+              <img src={{project.image}} width="200">
           </div>
           
           <div class="col-6">
-            (PLACEHOLDER FOR CONTACT)
+            <p class="center">  
+                <button ion-button 
+                        color="default"
+                        ng-click="setCurrentProjectID(project.id)">Set as Current!</button>
+            </p>
+              
+              
+            <b class="row subheader">Description</b>
+            <p>{{project.project_identifier_long}}</p>  
+              
         </div>
+          
+          
+          
       </div>
       
       <!-- -----------------------------------------  -->
@@ -26,8 +38,7 @@
             <p>{{project.address_postal_code}} &nbsp;&nbsp;{{project.address_town}} <br/>
             {{project.address_street}}</p> 
             
-            <b class="row subheader">Description</b>
-            <p>{{project.project_identifier_long}}</p> 
+
           
             <b class="row subheader">Contact</b>
             <p>
