@@ -8,13 +8,13 @@ angular.module('starter')
 
  //-----------------------------------------------------------
 .controller('ProductListCtrl', 
-            ['$rootScope', '$scope', '$http', 'coreFactory',
-            function($rootScope, $scope, $http, coreFactory ) {
+            ['$rootScope', '$scope', '$http', 'coreService',
+            function($rootScope, $scope, $http, coreService ) {
                   
              
   $scope.products = [];
             
-  coreFactory.getProducts() 
+  coreService.getProducts() 
              .then(
                 function (response){
                     $scope.products = response.data;
@@ -38,14 +38,14 @@ angular.module('starter')
 
 
 //-----------------------------------------------------------
-.controller('ProductCtrl', ["$rootScope", "$scope", "$http", "$stateParams", 'coreFactory',
-            function( $rootScope, $scope, $http, $stateParams, coreFactory) {
+.controller('ProductCtrl', ["$rootScope", "$scope", "$http", "$stateParams", 'coreService',
+            function( $rootScope, $scope, $http, $stateParams, coreService) {
      
   $scope.product = [];
     
     
 /**/              
-  coreFactory.getProduct (  parseInt ( $stateParams.id, 10) )
+  coreService.getProduct (  parseInt ( $stateParams.id, 10) )
             .then (
                 function (response) {
                       $scope.product = response.data;

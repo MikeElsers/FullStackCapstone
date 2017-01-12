@@ -13,15 +13,28 @@
          
       <div class="list" 
            ng-repeat="project in projects">
-         
-         <a class="item item-thumbnail-left item-icon-right" 
-              ng-href="#/app/project/{{project.id}}">    
-            <b> {{project.project_identifier_short}} </b>
-            <p> {{project.project_identifier_long}} </p>
-             <i type="button" 
-                class="icon ion-android-arrow-dropright">
-            </i>
+         <div>
+             <a class="item item-thumbnail-left item-icon-right" 
+                ng-href="#/app/project/{{project.id}}">  
+                 
+                 
+                 
+                <div class="icon bg-active" ng-if="current_project_id == project.id">
+                       &nbsp;&nbsp;&nbsp; 
+                </div>
+                <p></p>
+                     
+                     
+                     <b> {{project.project_identifier_short}} </b>   
+                                <p> {{project.project_identifier_long}} </p>
+
+                 <i type="button" 
+                    class="icon ion-android-arrow-dropright">
+                </i>
+                
         </a> 
+             
+        </div>     
       </div>
   </ion-content>    
 <!--     

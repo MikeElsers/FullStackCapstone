@@ -18,6 +18,14 @@ H1 {
     color: blue;
 }
 
+.red{
+    color:red;
+}
+
+.bg-active{
+    background-color:gold;
+}
+
 .subheader{
     background: rgb(150,250,150);
 }

@@ -3,7 +3,7 @@ angular.module('starter')
 .constant("base_url", "http://localhost:3000/")
 
 
-.service ('coreFactory',['$rootScope','$http', 'base_url',
+.service ('coreService',['$rootScope','$http', 'base_url',
                 function( $rootScope , $http, base_url ){
     
     //--------------------------------------------------
@@ -29,7 +29,7 @@ angular.module('starter')
 
   this.getProduct = function (index) {
                         return $http.get(base_url+"products/"+index);
-  };
+                    };
 
 
 //-----------------------------------------------------------------------           
@@ -47,16 +47,19 @@ angular.module('starter')
 //------------------------ CURRENT PROJECT    ------------------------------    
 
        this.getCurrentProject = function (){
-        return   this.getProject ( $rootScope.current_project_id);
         
+            return  this.getProject ( $rootScope.current_project_id);
        };
-        
-       this.getCurrentProjectID = function(){
-              return  $rootScope.current_project_id;  
-       };
+                            
+       //------------------------------------------------------------             
+       this.currentProjectID = $rootScope.current_project_id;
                     
+                    
+       //------------------------------------------------------------                             
        this.setCurrentProjectID = function(index){
+              console.log ("services: NEW current project: ID =["+index+"]");
               $rootScope.current_project_id = index;
+            console.log ("services:  ROOTSCOPE.current_project_id =" + $rootScope.current_project_id);
        };
 
 //-----------------------------------------------------------------------

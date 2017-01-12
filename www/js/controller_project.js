@@ -8,21 +8,22 @@ angular.module('starter')
 
  //-----------------------------------------------------------
 .controller('ProjectListCtrl', 
-            ['$rootScope', '$scope','$http','coreFactory',
-            function($rootScope, $scope, $http, coreFactory
+            ['$rootScope', '$scope','$http','coreService',
+            function($rootScope, $scope, $http, coreService
                      ) {
      
   $scope.projects = [];
+                
     
-  coreFactory.getProjects() 
+  coreService.getProjects() 
      .then(
           function (response){
                   $scope.projects = response.data;
               
               }
      );
-          
-                                     
+                
+                
     /* 
   $scope.projects = 
     [
@@ -87,13 +88,13 @@ angular.module('starter')
 
 
 //-----------------------------------------------------------
-.controller('ProjectCtrl', ["$rootScope", "$scope","$http", "$stateParams",'coreFactory',
-            function( $rootScope, $scope, $http, $stateParams, coreFactory) {
+.controller('ProjectCtrl', ["$rootScope", "$scope","$http", "$stateParams",'coreService',
+            function( $rootScope, $scope, $http, $stateParams, coreService) {
      
   $scope.project = [];
          
   /**/              
-  coreFactory.getProject (  parseInt ( $stateParams.id, 10) )
+  coreService.getProject (  parseInt ( $stateParams.id, 10) )
             .then (
                 function (response) {
                       $scope.project = response.data;
@@ -102,21 +103,20 @@ angular.module('starter')
 /**/      
  
    //------------------------------------------------            
-   $scope.setCurrentProjectID =  function (index){
-         console.log ("NEW current project: ID =["+index+"]");
-         coreFactory.setCurrentProjectID(index);       
+   $scope.setCurrentProjectID =  function (index){  
+         coreService.setCurrentProjectID(index);       
    }                          
    
    //------------------------------------------------            
-   $scope.getCurrentProjectID = function () {
-        coreFactory.getCurrentProjectID();
-   }
-                
+
+   $scope.getCurrentProjectID = function (){
+          return $rootScope.current_project_id;
+   };            
    
    //------------------------------------------------            
    $scope.getCurrentProject =  function (){
        
-        coreFactory.getCurrentProject()
+        coreService.getCurrentProject()
             .then(
                function(response){
                         $scope.current_project_id = response.data;
