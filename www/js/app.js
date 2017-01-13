@@ -68,6 +68,10 @@ angular.module('starter', ['ionic', 'ngCordova'])
       }
     })
   
+  
+  
+  
+  
     //-- *****************  PROJECT  ************************** 
     //-------------------------------------------------------------
     .state('app.projectlist', {
@@ -91,6 +95,8 @@ angular.module('starter', ['ionic', 'ngCordova'])
       }
     })
 
+  
+  
   
   //-- *****************  PRODUCT  **************************   
   //-------------------------------------------------------------
@@ -128,9 +134,23 @@ angular.module('starter', ['ionic', 'ngCordova'])
       }
   })
   
+   //-------------------------------------------------------------
+  
+   .state ('app.page404', {
+      
+      url: '/page404',
+      views: {
+         'menuContent': {
+             templateUrl: 'templates/page404.html',
+             controller: 'AboutController'
+         }
+      }
+  })
 ;
     
     
   // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/productlist');
+//    $urlRouterProvider.otherwise('/app/productlist');
+    $urlRouterProvider.otherwise('/app/page404');
+    
 });

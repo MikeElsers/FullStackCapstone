@@ -27,7 +27,7 @@
             </p>
               
               
-            <b class="row subheader">Description</b>
+            <b class="row subheader">Task Description</b>
             <p>{{project.project_identifier_long}}</p>  
               
         </div>
@@ -49,7 +49,7 @@
             <b class="row subheader">Contact</b>
             <p>
               <b>Name:</b> {{project.contact_name}} <br/>
-              <b>Phone:</b> {{project.contact_phone}}<br/>
+                <b>Phone:</b> <a href="tel:"+{{project.contact_phone}} >{{project.contact_phone}}</a>ionic <br/>
               <b>Remarks:</b> {{project_freetext}}
             </p>
       </div>

@@ -4,8 +4,10 @@
     <ion-header-bar class="bar bar-subheader"> 
     
         <div class="button-bar">
-            <button class="button button-balanced">Filter</button>
-            <button class="button button-assertive">Search</button>
+            <button class="button button-balanced">
+                <span>Filter&nbsp;&nbsp;<i class="ion-funnel"></i></span>
+            </button>
+            <button class="button button-assertive">Search&nbsp;&nbsp;<i class="ion-search"></i></button>
         </div>
     </ion-header-bar>
     
@@ -13,36 +15,51 @@
          
       <div class="list" 
            ng-repeat="project in projects">
-         <div>
-             <a class="item item-thumbnail-left item-icon-right" 
-                ng-href="#/app/project/{{project.id}}">  
-                     
-                 
-                <div class="icon bg-active" 
-                     ng-if="current_project_id == project.id">
-                       &nbsp;&nbsp;&nbsp; 
-                </div>
-                <p></p>
-                     
-                     
-                     <b> {{project.project_identifier_short}} </b>   
-                                <p> {{project.project_identifier_long}} </p>
 
+<!--             <a class="item item-thumbnail-left item-icon-right" 
+-->
+         <a class="item item-thumbnail-left item-icon-right" 
+            ng-href="#/app/project/{{project.id}}">  
+
+            <div class="row">
+            
+                <div class="col bg-active"
+                    ng-if="project.id == current_project_id" width="10px">
+                    
+                </div>
+                <div class="col">
+                    <p></p>
+                    <b> {{project.project_identifier_short}} </b>   
+                    <p> {{project.project_identifier_long}}  </p>
+                 </div>
+
+                 <div class="col">    
                  <i type="button" 
                     class="icon ion-android-arrow-dropright">
                 </i>
-                
+                </div> 
+            </div> 
+             
         </a> 
              
         </div>     
-      </div>
   </ion-content>    
-<!--     
-        <ion-footer-bar class="bar">
-            <div class="button-bar">
-                <button class="button button-royal">T32</button>  
-            </div>
-        </ion-footer-bar>
--->
+    
+    <!-- --------------------  FOOTER ----------------------------- -->
+    <ion-footer-bar class="bar">
+        <div class="button-bar">
+            total: {{projects.length}} projects | &nbsp;&nbsp;
+            <span  ng-if="current_project_id != 0">
+
+                   <a class="" 
+                      ng-href="#/app/project/{{current_project_id}}"
+                      >Goto current</a>                
+            </span>
+           <span class="" 
+              ng-if="current_project_id == 0">no current selected</span>
+
+        </div>
+    </ion-footer-bar>
+
 
 </ion-view>
