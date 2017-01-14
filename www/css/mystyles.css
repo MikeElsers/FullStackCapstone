@@ -9,6 +9,9 @@ H1 {
 .center{
     text-align: center;
 }
+.right{
+    text-align: right;
+}
 
 .marked_border{
     border-color: red;

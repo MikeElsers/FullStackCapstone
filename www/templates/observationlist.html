@@ -1,0 +1,44 @@
+<ion-view view-title="Observations"
+          ng-controller="ObservationController"
+          >
+    
+    <ion-header-bar class="bar bar-subheader"> 
+        <div class="button-bar">
+            <button class="button button-balanced">Filter</button>
+            <button class="button button-assertive">Search</button>
+        </div>
+    </ion-header-bar>
+    
+  <ion-content class="has-header">
+         
+      <div class="list" 
+           ng-repeat="observation in observations">
+        <a class="item  item-icon-right" 
+            ng-href="#/app/observation/{{observation.id}}" >
+            
+            <!-- <img src={{observation.image}} > -->
+            
+            <h2>Observation: {{observation.id}}
+                </h2>
+            <p> 
+                <span>
+                @:{{observation.recorded_at}}/ User:{{observation.recorded_by_user}}
+                </span>
+                Project: {{observation.project}}, <br/>
+                Product: {{observation.product}} <br/>
+                Comment: {{observation.comment}}</p>
+            
+            
+            <i class="icon ion-android-arrow-dropright"></i>
+        </a>     
+      </div>
+  </ion-content>    
+<!--     
+        <ion-footer-bar class="bar">
+            <div class="button-bar">
+                <button class="button button-royal">T32</button>  
+            </div>
+        </ion-footer-bar>
+-->
+
+</ion-view>

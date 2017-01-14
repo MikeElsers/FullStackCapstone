@@ -22,7 +22,7 @@ angular.module('starter')
               
               }
      );
-                
+                   
                 
     /* 
   $scope.projects = 

@@ -14,7 +14,9 @@ angular.module('starter', ['ionic', 'ngCordova'])
   $rootScope.base_url = "http://192.168.0.15:3000/";  
     
   //--  variable that holds 
-  $rootScope.current_project_id = 0 ;    
+  $rootScope.current_project_id     = 0 ; 
+    
+  $rootScope.current_observation_id = 0;
     
     
   $ionicPlatform.ready(function() 
@@ -71,18 +73,45 @@ angular.module('starter', ['ionic', 'ngCordova'])
   
   
   
-  
-    //-- *****************  PROJECT  ************************** 
+    //-- ********************************************************** 
+    //-- *****************  OBSERVATION  ************************** 
     //-------------------------------------------------------------
-    .state('app.projectlist', {
-      url: '/projectlist',
+    .state('app.observationlist', {
+      url: '/observationlist',
       views: {
         'menuContent': {
-            templateUrl: 'templates/projectlist.html',
-            controller: 'ProjectListCtrl'
+            templateUrl: 'templates/observationlist.html',
+            controller: 'ObservationController'
         }
       }
     })
+
+      //-------------------------------------------------------------
+    .state('app.observation', {
+      url: '/observation/:id',
+      views: {
+        'menuContent': {
+              templateUrl: 'templates/observation.html',
+              controller: 'ObservationController'
+        }
+      }
+    })
+  
+  
+  
+  
+  //-- ********************************************************** 
+  //-- *****************  PROJECT  **************************
+     //-------------------------------------------------------------
+  .state('app.projectlist', {
+     url: '/projectlist',
+       views: {
+         'menuContent': {
+            templateUrl: 'templates/projectlist.html',
+            controller: 'ProjectListCtrl'
+         }
+       }
+     })
 
     //-------------------------------------------------------------
     .state('app.project', {
@@ -94,11 +123,13 @@ angular.module('starter', ['ionic', 'ngCordova'])
         }
       }
     })
+   
 
   
   
+  //-- ********************************************************** 
+  //-- *****************  PRODUCT  ******************************
   
-  //-- *****************  PRODUCT  **************************   
   //-------------------------------------------------------------
     .state('app.productlist', {
       url: '/productlist',
@@ -120,6 +151,9 @@ angular.module('starter', ['ionic', 'ngCordova'])
         }
       }
     })
+  
+  //-- ********************************************************** 
+  //-- *****************  VARRIOUS PAGES************************* 
   
   //-------------------------------------------------------------
   

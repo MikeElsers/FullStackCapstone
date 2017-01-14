@@ -1,0 +1,139 @@
+<ion-view view-title="Observation"+{{observation.id}}
+          ng-controller="ObservationController"
+          >
+    <ion-header-bar class="bar bar-subheader"> 
+        <div class="center">
+                <b>Observation No.{{observation.id}}</b>    
+        </div>
+    </ion-header-bar>
+    
+  <ion-content class="has-header">
+      
+      <div class="row">
+ <!--     
+          <div class="col-4">
+              <img src={{project.image}} width="200">
+          </div>
+          
+          <div class="col-6">
+              <p></p>
+            <p class="center">  
+                <button ion-button 
+                        class="button button-positive"
+                        ng-if="current_project_id != project.id"
+                        ng-click="setCurrentProjectID(project.id)">Set as current!</button>
+                <button ion-button 
+                        class="button button-positive"
+                        ng-if="current_project_id == project.id"
+                        ng-click="setCurrentProjectID(0)">UNSet current!</button>
+            </p>
+        </div>          
+-->               
+          
+          
+      </div>
+      
+      <!-- -----------------------------------------  -->
+      <div>
+
+            <b class="row subheader  icon-left">
+                <i class="icon ion-ios-cart"></i>
+                &nbsp;&nbsp;Project  (ID {{observation.project}})
+            </b>
+            <p>
+                Addr: {{obs_project.address_town}}&nbsp;{{obs_project.address_postal_code}}; 
+                {{obs_project.address_street}}
+                <br/>
+
+                {{obs_project.project_identifier_long}}
+           </p>
+          
+            <!-- ---------------------------------------- -->
+            <p>  </p>
+             <hr/>
+            <b class="row subheader">
+                <i class="icon ion-ios-cart"></i>
+                &nbsp;&nbsp;Product
+            </b>
+          <p></p>
+                <div class="row">
+                    <div class="col col-20">
+                     <img src="{{obs_product.image}}" width="100%">
+                    </div>
+                    <div class="col col-80">
+                        Product-ID: {{observation.product}}
+                            [{{obs_product.product_name_short}}]      
+                    </div>
+                </div>
+            <p></p>  
+ 
+            <!-- ---------------------------------------- -->
+            <p>  </p>
+              <hr/>         
+            <b class="row subheader">          
+                <i class="icon ion-android-clipboard"></i>
+                &nbsp;&nbsp;Observation:
+            </b>
+            <p>{{observation.comment}}</p>  
+
+           
+          
+          <form class="form-horizontal" role="form"> 
+            <div  class="form-group"> 
+                <label  for="firstName"  class="col-sm-2  control-label"> First Name</label> 
+                
+                
+                 <ion-input  type="text" id="firstname" 
+                             name="firstname" 
+                            placeholder="Enter First Name"> </ion-input>
+                </div> 
+                             
+              <div class="form-group">
+                <button type="button" 
+                        class="button button-danger"
+                        ng-click="submitContent()">
+                Click me  
+                </button>
+              </div>
+         </form>
+          
+      </div>
+      
+      
+      
+      <form id="reserveForm" name="reserveForm" ng-submit="submitContent()">
+      
+      <label class="item item-input">
+          <span class="input-label">Date</span>
+          <input type="date" 
+                 place-holder="type Date"
+                 ng-model="reservation.date">
+        </label>
+      
+         <label class="item item-input">
+          <span class="input-label">Time</span>
+          <input type="time" ng-model="reservation.time"
+           name="reservetime" min="11:00:00" max="21:00:00">
+        </label>
+          
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Reserve</button>
+        </label>  
+          
+          
+      </form>
+          
+      
+      
+ 
+      
+  </ion-content>    
+<!--     
+        <ion-footer-bar class="bar">
+            <div class="button-bar">
+                <button class="button button-royal">T32</button>  
+            </div>
+        </ion-footer-bar>
+-->
+
+</ion-view>

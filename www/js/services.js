@@ -63,6 +63,18 @@ angular.module('starter')
        };
 
 //-----------------------------------------------------------------------
-               
+//----------------------------- Observations ----------------------------
+                    
+       this.getObservations = function (){
+                console.log ("in getObservations ");
+            return $http.get(base_url + "observations");               
+       };
+                    
+        this.getObservation = function (index) {
+            console.log ("in getObservation ["+index+"]");
+            return $http.get(base_url+"observations/"+index);
+       };            
+                    
+                    
                     
 } ]);
