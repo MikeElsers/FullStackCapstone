@@ -81,14 +81,14 @@ angular.module('starter')
                        console.log(" in getObservation");
                       $scope.observation = response.data;
                       
-                      coreService.getProduct ( 2) //$scope.observation.product)
+                      coreService.getProduct ($scope.observation.product) //$scope.observation.product)
                       .then (
                             function (response){
                                     console.log ("setting the product in obs");
                                     $scope.obs_product = response.data;
                             });  
                     
-                      coreService.getProject(4)
+                      coreService.getProject($scope.observation.project)
                       .then ( function(response){
                           $scope.obs_project  = response.data;
                           console.log ("setting the PROJECT, id=["+$scope.obs_project.id+"]"); 
