@@ -52,15 +52,6 @@ angular.module('starter', ['ionic', 'ngCordova'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-
     
     //-- ********************************************************** 
     //-- *****************  OBSERVATION  ************************** 
