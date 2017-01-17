@@ -18,8 +18,10 @@
             <ion-content>
       
       <!-- ------------------------------------------  -->
-      <span class="iwt center">
-          &nbsp;<i class="pull-left ion-funnel"></i>&nbsp;
+      <span class="iwt center ">
+          <span ng-class="{'red': filterIsSet}">
+          123&nbsp;<i class="pull-left ion-funnel"></i>&nbsp;
+          </span>
           <span width="70px"><input    
                 class="inputstyle"
                 name="filtercategory"
@@ -27,7 +29,7 @@
                 placeholder="write string to filter"
                 ng-model="myfilter.txt1"
            ></span>
-          &nbsp;<a ng-click="myfilter.txt1 ='';"><i class="pull-left ion-android-delete"></i></a>&nbsp;
+          &nbsp;<a ng-click="myfilter.txt1 ='';myfilter.txt2='';myfilter.txt3='';"><i class="pull-left ion-android-delete"></i></a>&nbsp;
 
           
        </span>
@@ -44,17 +46,14 @@
             <i class="icon ion-android-arrow-dropright"></i>
         </a>     
       </div>
- 
-      
+
       
       
   </ion-content>    
-<!--     
+    
         <ion-footer-bar class="bar">
-            <div class="button-bar">
-                <button class="button button-royal">T32</button>  
-            </div>
+            <div ng-class="{'red': filterIsSet}">Current filter: {{filterTerms}}</div>
         </ion-footer-bar>
--->
+
 
 </ion-view>

@@ -13,13 +13,31 @@ angular.module('starter')
   
   $scope.products = [];
  
-                
+  
+               
                 
  //---------------- FILTER --------------------------------
                  
   $rootScope.myfilter= { "txt1":"", "txt2":"", "txt3":""};    
-                
   
+                
+  $rootScope.$watch( '[myfilter.txt1,myfilter.txt2,myfilter.txt3]',
+                     function(){
+       $rootScope.filterTerms = ("[  "+$rootScope.myfilter.txt1+"  /  "+
+                                $rootScope.myfilter.txt2+"  /  "+
+                                $rootScope.myfilter.txt3+"  ]"); 
+  },true);              
+      
+                
+  $rootScope.$watch('filterTerms', function(){
+      
+            console.log(" Length is ["+$rootScope.myfilter.txt1.length+"]");
+            $rootScope.filterIsSet =  ($rootScope.filterTerms.length > 16) 
+
+            console.log (" filterIsSet = ["+$rootScope.filterIsSet+"]");
+  })            
+  
+      
                 
   //------------------ General Product List--------------------------------                
   coreService.getProducts() 
