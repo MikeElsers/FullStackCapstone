@@ -74,7 +74,24 @@ angular.module('starter')
             console.log ("in getObservation ["+index+"]");
             return $http.get(base_url+"observations/"+index);
        };            
+  
                     
+//-----------------------------------------------------------------------
+//-----------------------------  FILTER  ----------------------------
                     
+    var myProductFilterText = "myP";
+                  
+                    
+    this.setProductFilterText = function (newTxt){
+        myProductFilterText = newTxt;
+        console.log(" broadcasting the updated-PRODUCT-FilterText ["+newTxt+"]");
+        $rootScope.$broadcast('updatedFilterText');  //broadcast the change
+    }
+                    
+    this.getProductFilterText = function (){
+        return myProductFilterText;
+    }               
+     
+    
                     
 } ]);

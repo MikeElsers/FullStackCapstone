@@ -61,18 +61,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-  
-  
-  
-  
+    
     //-- ********************************************************** 
     //-- *****************  OBSERVATION  ************************** 
     //-------------------------------------------------------------
@@ -151,6 +140,18 @@ angular.module('starter', ['ionic', 'ngCordova'])
         }
       }
     })
+  
+   //-------------------------------------------------------------
+   .state('app.filter', {
+      url: '/filter',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/filter.html',
+          controller: 'ProductListCtrl'
+        }
+      }
+    })
+  
   
   //-- ********************************************************** 
   //-- *****************  VARRIOUS PAGES************************* 

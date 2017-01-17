@@ -1,7 +1,7 @@
 <ion-view view-title="ProjectList"
           ng-controller="ProjectListCtrl"
           >
-    <ion-header-bar class="bar bar-subheader"> 
+    <ion-header-bar class="bar bar-subheader">
     
         <div class="button-bar">
             <button class="button button-balanced">
@@ -12,37 +12,45 @@
     </ion-header-bar>
     
   <ion-content class="has-header">  <!--  class="has-header">    -->
-         
-      <div class="list" 
-           ng-repeat="project in projects">
-
-<!--             <a class="item item-thumbnail-left item-icon-right" 
--->
-         <a class="item item-thumbnail-left item-icon-right" 
+    
+      <ion-list ng-repeat="project in projects">
+      
+         <a class="item  item-icon-right" 
             ng-href="#/app/project/{{project.id}}">  
+                         
+           <div class="row">
 
-            <div class="row">
-            
-                <div class="col bg-active"
-                    ng-if="project.id == current_project_id" width="10px">
-                    
-                </div>
-                <div class="col">
-                    <p></p>
-                    <b> {{project.project_identifier_short}} </b>   
-                    <p> {{project.project_identifier_long}}  </p>
-                 </div>
+                   <div class="col col-20 ">
+                        <img src={{project.image}} width="100%"></img>
+                    </div>
 
-                 <div class="col">    
-                 <i type="button" 
-                    class="icon ion-android-arrow-dropright">
-                </i>
-                </div> 
-            </div> 
-             
+                   <div class="col col-10 bg-active"
+                        ng-if="project.id == current_project_id">
+                       &nbsp;&nbsp;
+                   </div>
+
+                    <div class="col col-60">
+                        <b>{{project.project_identifier_short}} </b>   
+                        <p>{{project.project_identifier_long}}  </p>
+                        <p><span  class="ce_badge"
+                                  ng-if="project.id == current_project_id">  
+                              >&nbsp;Currently Selected&nbsp;</span>
+                        </p>
+
+                     </div>
+
+                     <div class="col col-10">    
+                     <i type="button" 
+                        class="icon ion-android-arrow-dropright">
+                    </i>
+                </div>      
+             </div>  
+          
         </a> 
              
-        </div>     
+       
+    
+      </ion-list>
   </ion-content>    
     
     <!-- --------------------  FOOTER ----------------------------- -->

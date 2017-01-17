@@ -4,15 +4,23 @@
     
     <ion-header-bar class="bar bar-subheader"> 
         <div class="button-bar">
-            <button class="button button-balanced">Filter</button>
+            <button class="button button-balanced">Filter [ {{myfilter.txt}} ]</button>
+            
+            
+            
             <button class="button button-assertive">Search</button>
         </div>
     </ion-header-bar>
     
   <ion-content class="has-header">
-         
+      
+      <div>
+        Filtertext: &lt;{{myfilter.txt}}&gt;
+      </div>
+      
+      
       <div class="list" 
-           ng-repeat="product in products">
+           ng-repeat="product in products | filter:myfilter.txt">
         <a class="item item-thumbnail-left item-icon-right" 
             ng-href="#/app/product/{{product.id}}" >
             
@@ -24,6 +32,8 @@
         </a>     
       </div>
  
+      
+      
       
   </ion-content>    
 <!--     

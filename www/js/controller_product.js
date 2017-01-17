@@ -10,10 +10,18 @@ angular.module('starter')
 .controller('ProductListCtrl', 
             ['$rootScope', '$scope', '$http', 'coreService',
             function($rootScope, $scope, $http, coreService ) {
-                  
-             
+  
   $scope.products = [];
-            
+ 
+                
+                
+ //---------------- FILTER --------------------------------
+                 
+  $rootScope.myfilter= { "txt":""};    
+                
+  
+                
+  //------------------ General Product List--------------------------------                
   coreService.getProducts() 
              .then(
                 function (response){
@@ -43,6 +51,8 @@ angular.module('starter')
      
   $scope.product = [];
     
+                
+ 
     
 /**/              
   coreService.getProduct (  parseInt ( $stateParams.id, 10) )
