@@ -17,7 +17,7 @@ angular.module('starter')
                 
  //---------------- FILTER --------------------------------
                  
-  $rootScope.myfilter= { "txt":""};    
+  $rootScope.myfilter= { "txt1":"", "txt2":"", "txt3":""};    
                 
   
                 

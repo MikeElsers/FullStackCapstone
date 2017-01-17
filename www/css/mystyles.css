@@ -34,6 +34,15 @@ H1 {
     background-color:red;
 }
 
+.inputstyle{
+    width: 75%;
+    font-size: 10pt;
+}
+
+.iwt{
+        display:block;
+}
+
 .subheader{
     background: rgb(150,250,150);
 }

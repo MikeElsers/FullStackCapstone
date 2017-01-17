@@ -18,15 +18,44 @@
                 <ion-item>
                     <label class="item item-input">
                     
-                        <span class="input-label">Search string:</span>
+                        <span class="input-label">Filter 1 (quick filter):</span>
                         <input  type="text" 
                                 name="filtercategory"
                                 id="filtercategory" 
                                 placeholder="write string to filter with"
-                                ng-model="myfilter.txt"
+                                ng-model="myfilter.txt1"
                                 >
                     </label>  
                 </ion-item>
+         
+                <!-- ------------------------------------------  -->
+                <ion-item>
+                    <label class="item item-input">
+                    
+                        <span class="input-label">Filter 2:</span>
+                        <input  type="text" 
+                                name="filtercategory"
+                                id="filtercategory" 
+                                placeholder="write string to filter with"
+                                ng-model="myfilter.txt2"
+                                >
+                    </label>  
+                </ion-item>
+         
+               <!-- ------------------------------------------  -->
+                <ion-item>
+                    <label class="item item-input">
+                    
+                        <span class="input-label">Filter 3:</span>
+                        <input  type="text" 
+                                name="filtercategory"
+                                id="filtercategory" 
+                                placeholder="write string to filter with"
+                                ng-model="myfilter.txt3"
+                                >
+                    </label>  
+                </ion-item>
+         
                 <!-- ------------------------------------------  -->     
 <!--                <ion-item class="item-divider item-icon-left">
                       <i class="icon ion-toggle-filled"></i>
@@ -47,6 +76,12 @@
                                   >Q2 {{filter1}}</ion-checkbox>
                 </ion-item>
 --->
+          
+         <ion-item>
+            <p>{{myfilter.txt1}}</p>
+             <p>{{myfilter.txt2}}</p>
+            <p>{{myfilter.txt3}}</p>
+         </ion-item>
          
          <!-- ------------------------------------------  -->     
                 <ion-item class="item-divider item-icon-left">

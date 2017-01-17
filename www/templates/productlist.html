@@ -2,25 +2,38 @@
           ng-controller="ProductListCtrl"
           >
     
-    <ion-header-bar class="bar bar-subheader"> 
+<!--
+      <ion-header-bar class="bar bar-subheader"> 
         <div class="button-bar">
             <button class="button button-balanced">Filter [ {{myfilter.txt}} ]</button>
-            
-            
-            
             <button class="button button-assertive">Search</button>
         </div>
-    </ion-header-bar>
-    
+        
+    </ion-header-bar>    
+        
   <ion-content class="has-header">
+
+-->    
+  
+            <ion-content>
       
-      <div>
-        Filtertext: &lt;{{myfilter.txt}}&gt;
-      </div>
-      
+      <!-- ------------------------------------------  -->
+      <span class="iwt center">
+          &nbsp;<i class="pull-left ion-funnel"></i>&nbsp;
+          <span width="70px"><input    
+                class="inputstyle"
+                name="filtercategory"
+                id="filtercategory" 
+                placeholder="write string to filter"
+                ng-model="myfilter.txt1"
+           ></span>
+          &nbsp;<a ng-click="myfilter.txt1 ='';"><i class="pull-left ion-android-delete"></i></a>&nbsp;
+
+          
+       </span>
       
       <div class="list" 
-           ng-repeat="product in products | filter:myfilter.txt">
+           ng-repeat="product in products | filter:myfilter.txt1 | filter:myfilter.txt2 | filter:myfilter.txt3 "> 
         <a class="item item-thumbnail-left item-icon-right" 
             ng-href="#/app/product/{{product.id}}" >
             
