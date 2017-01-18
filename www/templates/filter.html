@@ -10,7 +10,7 @@
                 <!-- ------------------------------------------  -->
                <ion-item class="item-divider  item-icon-left">
                       <i class="icon ion-clipboard"></i>
-                      search term
+                      Filter terms
                 </ion-item>
 
          
@@ -18,7 +18,7 @@
                 <ion-item>
                     <label class="item item-input">
                     
-                        <span class="input-label">Filter 1 (quick filter):</span>
+                        <span class="input-label">Filter 1 (quick (*)):</span>
                         <input  type="text" 
                                 name="filtercategory"
                                 id="filtercategory" 
@@ -56,23 +56,52 @@
                     </label>  
                 </ion-item>
          
-          
-         <ion-item><b>Filter-Summary</b>
-            <p>-{{myfilter.txt1}}</p>
-             <p>-{{myfilter.txt2}}</p>
-            <p>-{{myfilter.txt3}}</p>
+         <!-- ------------   SUMMARY  ---------------------- -->
+ <!--         
+         <ion-item>
+             <div class="row">
+                <div class="col col-30">
+                 <b>Summary</b>
+                 </div>
+                 <div class="col col-70">
+                        <p>-{{myfilter.txt1}}</p>
+                         <p>-{{myfilter.txt2}}</p>
+                        <p>-{{myfilter.txt3}}</p>                 
+                 </div>
+             </div>
+         </ion-item>
+-->
+         
+         
+         
+         
+         <!-- -----------  HELP -------------------------- -->
+         <!-- ------------------------------------------  -->     
+         <ion-item class="item-divider  item-icon-left">
+                      <i class="icon ion-help"></i>
+                      Explantions / How to use
          </ion-item>
          
-         <!-- ------------------------------------------  -->     
-                <ion-item class="item-divider item-icon-left">
-                   Explantions  
-                </ion-item>
-               <!-- ------------------------------------------  -->
-                <p>- (*) Quick filter = the same filter as on productList page. Filter 2 and 3 are accessible only here !</p>
-                <p>- </p>
-             
-      
-      </ion-list>
+         <!-- ------------------------------------------  -->
+         
+        <div class="w3-accordion w3-light-grey">
+          <div ng-repeat="group in filterComments">
+            <button ng-click="toggleVisibility(group.name);"
+                    class="w3-btn-block-modified  w3-left-align">
+                <span><i class="icon ion-arrow-down-b"></i>
+                    {{group.name}}
+                </span>
+                
+            </button>
+
+              <div id={{group.name}} 
+                   class="w3-accordion-content w3-container">
+              <p>{{group.comment}}</p>
+            </div>
+        </div>
+      </div>     
+         
+    </ion-list>
       
   </ion-content>
 </ion-view>

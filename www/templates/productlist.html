@@ -20,7 +20,7 @@
       <!-- ------------------------------------------  -->
       <span class="iwt center ">
           <span ng-class="{'red': filterIsSet}">
-          123&nbsp;<i class="pull-left ion-funnel"></i>&nbsp;
+          &nbsp;<i class="pull-left ion-funnel"></i>&nbsp;
           </span>
           <span width="70px"><input    
                 class="inputstyle"
@@ -50,7 +50,9 @@
       
       
   </ion-content>    
-    
+        <!--  shows the current filter terms, e.g. "current filter [ abc / / test ] " -- >> if any filter is set, written in red -->
+
+
         <ion-footer-bar class="bar">
             <div ng-class="{'red': filterIsSet}">Current filter: {{filterTerms}}</div>
         </ion-footer-bar>

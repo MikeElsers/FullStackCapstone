@@ -61,3 +61,31 @@ H1 {
 }
 
 .ce_badge{background-color:red;color:white;display:inline-block;padding-left:8px;padding-right:8px;text-align:center;border-radius:50%}
+
+
+
+.list .item.item-accordion {
+   width: 75%;
+   text-align: center;
+   word-wrap: break-word;
+    
+  
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+.ion-checkbox-viewport {
+  max-height: 200px;
+  width:100%;
+  display:block !important;
+  overflow:scroll !important;
+}
+.w3-btn-modified,.w3-btn-block-modified{border:none;display:inline-block;outline:0;padding:6px 16px;vertical-align:middle;overflow:hidden;text-decoration:underline!important;color:blue;background-color:transparent;text-align:center;cursor:pointer;white-space:nowrap}
