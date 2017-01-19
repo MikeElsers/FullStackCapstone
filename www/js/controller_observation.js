@@ -37,16 +37,39 @@ angular.module('starter')
      );
        
        
+       $scope.$watch ($rootScope.current_project_id, 
+                      function(){
+                 console.log (" currentProjectID changed --> observation !"); 
+           
+       });
+       
        
        $scope.currentButtonIsDisabled =  function(){
            console.log(" in currentButtonIsDisabled...["+$rootScope.current_project_id+"]");
-          return  ($rootScope.current_project_id ==0);
+          return  ! ($rootScope.current_project_id !=0 ||
+                   currentProjectFilterEnabled
+                  );
        }
        
+       
+       //-------------------------------------------------------
+       var  currentProjectFilterEnabled = true;
        
        $scope.toggleCurrentProjectFilter = function(){
-           
+           console.log(" NOT IMPLEMENTED: toggleCurrentProjectFilter ");
+           currentProjectFilterEnabled = ! currentProjectFilterEnabled;
        }
+       
+       
+       //----------------- current filter predicate ------------
+       //--  true,  if current_project_id==0 (<--> no currentProject set)
+       //-- OR true, if  the project attrib  matches the current_project_id
+       $scope.currentFilterPredicate = function(thisObservation){
+           return ( currentProjectFilterEnabled ||
+               ($rootScope.current_project_id ==0) || (thisObservation.project ==          
+                                    $rootScope.current_project_id));
+       }
+       
        
        
        
