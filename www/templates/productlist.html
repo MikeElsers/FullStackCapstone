@@ -29,13 +29,13 @@
   <ion-content>
       
       <div class="list" 
-           ng-repeat="product in products | filter:myfilter.txt1 | filter:myfilter.txt2 | filter:myfilter.txt3 "> 
+           ng-repeat="thisProduct in products | filter:myfilter.txt1 | filter:myfilter.txt2 | filter:myfilter.txt3 "> 
         <a class="item item-thumbnail-left item-icon-right" 
-            ng-href="#/app/product/{{product.id}}" >
+            ng-href="#/app/product/{{thisProduct.id}}" >
             
-            <img src={{product.image}} > 
-            <h2> {{product.product_name_short}} </h2>
-            <p> {{product.product_name_long}} </p>
+            <img src={{thisProduct.image}} > 
+            <h2> {{thisProduct.product_name_short}} </h2>
+            <p> {{thisProduct.product_name_long}} </p>
             
             <i class="icon ion-android-arrow-dropright"></i>
         </a>     

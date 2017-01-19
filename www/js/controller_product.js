@@ -8,8 +8,8 @@ angular.module('starter')
 
  //-----------------------------------------------------------
 .controller('ProductListCtrl', 
-            ['$rootScope', '$scope', '$http', 'coreService',
-            function($rootScope, $scope, $http, coreService ) {
+                 ['$rootScope', '$scope', '$http',  "$stateParams", 'coreService',
+            function($rootScope, $scope,   $http,    $stateParams,   coreService ) {
   
   $scope.products = [];
  
@@ -47,6 +47,16 @@ angular.module('starter')
                 }   
              );
   
+                
+ $scope.product = [];  
+                
+ coreService.getProduct (  parseInt ( $stateParams.id, 10) )
+            .then (
+                function (response) {
+                      $scope.product = response.data;
+                      //$scope.showDis = true;
+                });                
+                
 /*    
   $scope.products = 
     [
@@ -73,7 +83,7 @@ angular.module('starter')
                 }
         }             
                 
-                
+      //----------  HELPER TEXTS for FILTER function -----------------------------   
       $scope.filterComments =[
 /**/    
         {name:"General usage", 
@@ -92,59 +102,10 @@ angular.module('starter')
             comment:"All filters are chained by 'AND'" 
         } 
       ];
-          
-      //-------------------------------------------------
-                
-}]
-)
-
-
-//-----------------------------------------------------------
-.controller('ProductCtrl', ["$rootScope", "$scope", "$http", "$stateParams", 'coreService',
-            function( $rootScope, $scope, $http, $stateParams, coreService) {
-     
-  $scope.product = [];
-    
-                
- 
-    
-/**/              
-  coreService.getProduct (  parseInt ( $stateParams.id, 10) )
-            .then (
-                function (response) {
-                      $scope.product = response.data;
-                      //$scope.showDis = true;
-                });
-/**/             
-                                
-/* 
-  $scope.product = 
-    
-      {
-         "id":"3",
-         "product_name_short":"Test-3: SillyKuun, 300ml",
-         "product_name_long":"Test-3: awesome silicone product: SillyKuun, 0.3 l package",
-         "producer":"NP - NewProducts, Inc.",
-         "image":"img/prod/3.jpg",
-         "description":"This is the awesome silicone product for bath and kitchen to fill any joints.",
-         "scope_of_application":"tile walls in bath / kitchen ",
-         "resources":"",
-         "additional_explanations":"***additional explanations about the product ***",
-         "keywords":"",
-         "quality_1":"yes",
-         "quality_2":"yes",
-         "quality_3":"yes",
-         "quality_4":"no",
-         "quality_levels":"",
-         "inserted_at_date":"2017-01-05",
-         "inserted_by_user":"CE"
-      }
-*/    
-
-
+                       
 }] )
-;
 
-//--------------------------------------------------------
+;
+//--------------------   E O F      ------------------------------------
                       
                           

@@ -127,7 +127,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
       views: {
         'menuContent': {
               templateUrl: 'templates/product.html',
-              controller: 'ProductCtrl'
+              controller: 'ProductListCtrl'
         }
       }
     })

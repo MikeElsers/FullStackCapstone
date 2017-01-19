@@ -18,6 +18,9 @@ angular.module('starter')
     
        $scope.observation = [];
     
+       $scope.limitToCurrent = false;
+       
+       
        $scope.current_project = 0;
        $scope.current_product = 0;
 
@@ -32,6 +35,20 @@ angular.module('starter')
               
               }
      );
+       
+       
+       
+       $scope.currentButtonIsDisabled =  function(){
+           console.log(" in currentButtonIsDisabled...["+$rootScope.current_project_id+"]");
+          return  ($rootScope.current_project_id ==0);
+       }
+       
+       
+       $scope.toggleCurrentProjectFilter = function(){
+           
+       }
+       
+       
        
 /**/                   
 /*                 

@@ -1,13 +1,29 @@
 <ion-view view-title="Product"
-          ng-controller="ProductCtrl"
+          ng-controller="ProductListCtrl"
+          can-swipe-back
           >
-    <ion-header-bar class="bar bar-subheader"> 
-        <b>{{product.producer}}:&nbsp;&nbsp;</b> 
-        <span class="blue bold">{{product.product_name_short}}</span>
+    <ion-header-bar class="bar bar-subheader">  
+        <div class="row">
+            <div class="row blue bold">
+                {{product.product_name_short}}
+            </div>
+        </div>
+
     </ion-header-bar>
     
-  <ion-content class="has-header">
+    
+    <!-- --------------------------------------------------- -->
+  <ion-content 
+               class="has-header">
+      <div class="row">
+          <b>{{product.producer}}:&nbsp;&nbsp;</b>
+      </div>
+      <div class="row">
+        <span class="blue bold">{{product.product_name_long}}</span>
+      </div>
       
+      
+      <ion-list>
       <div class="row">
           <div class="col col-3">
           <img src={{product.image}} width="100%" margin="30px"> 
@@ -75,6 +91,7 @@
             </div>
       </div>
  
+    </ion-list>
       
   </ion-content>    
 <!--     
