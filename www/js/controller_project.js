@@ -13,7 +13,34 @@ angular.module('starter')
                      ) {
      
   $scope.projects = [];
+             
+  
+  //---------------- FILTER --------------------------------
+                 
+  $rootScope.myprojectfilter= { "txt1":""};    
+  
                 
+  $rootScope.$watch( 'myprojectfilter.txt1',
+                     function(){
+                    $rootScope.projectFilterTerms = 
+                        ("[  "+$rootScope.myprojectfilter.txt1+
+                                // "  /  "+
+                                // $rootScope.myfilter.txt2+"  /  "+
+                                // $rootScope.myfilter.txt3+
+                        "  ]"); 
+  },true);              
+      
+                
+  $rootScope.$watch('projectFilterTerms', function(){
+      
+            console.log(" Project Filter: Length is ["+$rootScope.myprojectfilter.txt1.length+"]");
+            $rootScope.projectFilterIsSet =  ($rootScope.projectFilterTerms.length > 6) 
+
+            console.log (" projectFilterIsSet = ["+$rootScope.projectFilterIsSet+"]");
+  })
+  
+  
+  //----------------  STANDARD FUNCTIONS  -------------------------------- 
     
   coreService.getProjects() 
      .then(

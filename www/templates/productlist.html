@@ -2,23 +2,10 @@
           ng-controller="ProductListCtrl"
           >
     
-<!--
-      <ion-header-bar class="bar bar-subheader"> 
-        <div class="button-bar">
-            <button class="button button-balanced">Filter [ {{myfilter.txt}} ]</button>
-            <button class="button button-assertive">Search</button>
-        </div>
-        
-    </ion-header-bar>    
-        
-  <ion-content class="has-header">
 
--->    
-  
-            <ion-content>
-      
-      <!-- ------------------------------------------  -->
-      <span class="iwt center ">
+      <ion-header-bar class="bar bar-subheader"> 
+         <!-- ------------------------------------------  -->
+      <span class="iwt center button-bar">
           <span ng-class="{'red': filterIsSet}">
           &nbsp;<i class="pull-left ion-funnel"></i>&nbsp;
           </span>
@@ -30,9 +17,16 @@
                 ng-model="myfilter.txt1"
            ></span>
           &nbsp;<a ng-click="myfilter.txt1 ='';myfilter.txt2='';myfilter.txt3='';"><i class="pull-left ion-android-delete"></i></a>&nbsp;
-
-          
+ 
        </span>
+        
+    </ion-header-bar>    
+        
+  <ion-content class="has-header">
+
+  
+  <!-- ------------------------------------------------------- -->
+  <ion-content>
       
       <div class="list" 
            ng-repeat="product in products | filter:myfilter.txt1 | filter:myfilter.txt2 | filter:myfilter.txt3 "> 
@@ -46,8 +40,6 @@
             <i class="icon ion-android-arrow-dropright"></i>
         </a>     
       </div>
-
-      
       
   </ion-content>    
         <!--  shows the current filter terms, e.g. "current filter [ abc / / test ] " -- >> if any filter is set, written in red -->

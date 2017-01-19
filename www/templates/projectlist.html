@@ -3,17 +3,34 @@
           >
     <ion-header-bar class="bar bar-subheader">
     
-        <div class="button-bar">
-            <button class="button button-balanced">
-                <span>Filter&nbsp;&nbsp;<i class="ion-funnel"></i></span>
-            </button>
-            <button class="button button-assertive">Search&nbsp;&nbsp;<i class="ion-search"></i></button>
-        </div>
+     
+        
+       <div class="iwt center button-bar">
+          <span ng-class="{'red': projectFilterIsSet}">
+          &nbsp;<i class="pull-left ion-funnel"></i>&nbsp;
+          </span>
+          <span width="70px"><input    
+                class="inputstyle"
+                name="filtercategory"
+                id="filtercategory" 
+                placeholder="write string to filter"
+                ng-model="myprojectfilter.txt1"
+           ></span>
+          &nbsp;<a ng-click="myprojectfilter.txt1 ='';">
+                    <i class="pull-left ion-android-delete"></i>
+                </a>&nbsp;
+
+          
+       </div>
+        
+        
+        
+        
     </ion-header-bar>
     
   <ion-content class="has-header">  <!--  class="has-header">    -->
-    
-      <ion-list ng-repeat="project in projects">
+      
+      <ion-list ng-repeat="project in projects | filter:myprojectfilter.txt1">
       
          <a class="item  item-icon-right" 
             ng-href="#/app/project/{{project.id}}">  
@@ -21,10 +38,10 @@
            <div class="row">
 
                    <div class="col col-20 ">
-                        <img src={{project.image}} width="100%"></img>
+                        <img src={{project.image}} width="100%">
                     </div>
 
-                   <div class="col col-10 bg-active"
+                   <div class="col col-4 bg-active"
                         ng-if="project.id == current_project_id">
                        &nbsp;&nbsp;
                    </div>
@@ -39,9 +56,8 @@
 
                      </div>
 
-                     <div class="col col-10">    
-                     <i type="button" 
-                        class="icon ion-android-arrow-dropright">
+                     <div class="col col-6">    
+                        <i class="icon ion-android-arrow-dropright">
                     </i>
                 </div>      
              </div>  
