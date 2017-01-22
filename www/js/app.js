@@ -177,6 +177,6 @@ angular.module('starter', ['ionic', 'ngCordova'])
     
   // if none of the above states are matched, use this as the fallback
 //    $urlRouterProvider.otherwise('/app/productlist');
-    $urlRouterProvider.otherwise('/app/page404');
+    $urlRouterProvider.otherwise('/app/about');
     
 });
